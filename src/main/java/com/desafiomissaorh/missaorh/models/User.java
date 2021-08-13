@@ -1,6 +1,7 @@
 package com.desafiomissaorh.missaorh.models;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -11,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -35,9 +37,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 	    @Column(name = "code")
 	    private String code;
 
-	    @JsonFormat(pattern = "dd/MM/yyyy")
+	    @DateTimeFormat(pattern = "dd/MM/yyyy")
 	    @Column(name = "birthdate")
-	    private Date birthdate;
+	    private LocalDate birthdate;
 	    
 
 		public Long getId() {
@@ -72,24 +74,13 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 			this.code = code;
 		}
 
-		public Date getBirthdate() {
+		public LocalDate getBirthdate() {
 			return birthdate;
 		}
 
-		public void setBirthdate(Date birthdate) {
+		public void setBirthdate(LocalDate birthdate) {
 			this.birthdate = birthdate;
 		}
-
-
-
-
-
-
-
-
-
-	
-
 
 
 }
